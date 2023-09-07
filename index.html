@@ -2,67 +2,95 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Blast Off Apps</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adam Paul - Product Management Expert</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Welcome to Blast Off Apps</h1>
-        <img src="rocket.png" alt="Rocket" class="rocket-image">
-        <!-- HTML for the Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Welcome to Blast Off Apps</h2>
-    <p>Please enter your name and email:</p>
-    <input type="text" id="username" placeholder="Name" required>
-    <input type="email" id="useremail" placeholder="Email" required>
-    <button onclick="submitData()">Submit</button>
-  </div>
-</div>
 
-<script>
-  // JS for the Modal
-  var modal = document.getElementById('myModal');
-  var span = document.getElementsByClassName("close")[0];
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education & Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  window.onload = function() {
-    modal.style.display = "block";
-  }
+  <!-- Home Section -->
+  <section id="home" class="fade-in">
+    <h1>Welcome to Adam Paul's Professional Portfolio</h1>
+    <p>Results-driven Implementation Manager and Certified Scrum Master with 9+ years of experience.</p>
+    <a href="#contact" class="button">Get in Touch</a>
+  </section>
 
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+  <!-- About Section -->
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>Your brief bio and story here...</p>
+  </section>
 
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+  <!-- Experience Section -->
+  <section id="experience" class="section-highlight fade-in">
+    <h2>Experience</h2>
+    <!-- Naehas Inc. -->
+    <h3>Implementation Manager at Naehas Inc.</h3>
+    <p>Role, Date, and Description here...</p>
 
-  function submitData() {
-    const userName = document.getElementById('username').value;
-    const userEmail = document.getElementById('useremail').value;
+    <!-- Blast Off Apps -->
+    <h3>Senior Product Manager at Blast Off Apps</h3>
+    <p>Role, Date, and Description here...</p>
+  </section>
 
-    fetch('/.netlify/functions/saveData', {
-      method: 'POST',
-      body: JSON.stringify({ name: userName, email: userEmail }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(response => {
-      return response.json();
-    }).then(data => {
-      modal.style.display = "none";
-      alert(data.message);
-    });
-  }
-</script>
+  <!-- Skills Section -->
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <ul>
+      <li>Critical Thinking</li>
+      <li>Product Management</li>
+      <!-- Add other skills here -->
+    </ul>
+  </section>
 
-    </div>
+  <!-- Education & Certifications Section -->
+  <section id="education" class="fade-in">
+    <h2>Education & Certifications</h2>
+    <!-- Education Details -->
+    <h3>Education</h3>
+    <p>BACHELOR OF ARTS (B.A.) IN PHYSICS, Morgantown, WV, US</p>
+
+    <!-- Certifications Details -->
+    <h3>Certifications</h3>
+    <ul>
+      <li>Project Management Professional (PMP)</li>
+      <li>Certified SCRUM Master (SMC)</li>
+      <!-- Add other certifications here -->
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <p>Email: adam@mercuryplatform.com</p>
+    <p>Phone: +1 304- 218-8798</p>
+    <!-- Add a contact form here if desired -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2023 Adam Paul. All rights reserved.</p>
+  </footer>
+
+  <!-- Optional: Add JavaScript for dynamic interactions -->
+  <script src="js/scripts.js"></script>
+
 </body>
 
 </html>
